@@ -2,7 +2,6 @@ from .login import Login
 from .common.utils.login import login
 from .common.utils.race import wait_to_load, is_qualifying
 from .race import NormalRace, QualifyingRace
-import time
 
 
 class NitroType:
@@ -27,7 +26,7 @@ class NitroType:
         """
         self.driver.get("https://www.nitrotype.com/race")
         wait_to_load(self.driver)
-        time.sleep(0.8)
+        self.driver.implicitly_wait(1)
         if is_qualifying(self.driver):
             return QualifyingRace(self.driver)
 
