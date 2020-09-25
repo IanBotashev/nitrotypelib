@@ -51,16 +51,16 @@ class Race:
 
         return text, input_area
 
-
-class NormalRace(Race):
-    race_type = TR_NORMAL
-
     def wait_for_start(self, delay=100):
         try:
-            WebDriverWait(self.driver, delay).until(ec.presence_of_element_located((By.CLASS_NAME, "raceLight")))
+            WebDriverWait(self.driver, delay).until(ec.invisibility_of_element((By.CLASS_NAME, "raceLight")))
             return False
         except TimeoutException:
             return True
+
+
+class NormalRace(Race):
+    race_type = TR_NORMAL
 
 
 class QualifyingRace(Race):

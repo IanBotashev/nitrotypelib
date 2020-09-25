@@ -32,15 +32,15 @@ def wait_to_load(driver, delay=5):
 
 def start_race(race):
     """
-    Starts the race, or waits for the race to start.
+    Starts the race, or waits for the race to start,
+    and also waits for text.
     :return:
     """
+    print(race.race_type)
     if race.race_type == TR_QUALIFY:
         race.start_race()
-        text, input_area = race.get_data()
 
-    else:
-        race.wait_for_start()
-        text, input_area = race.get_data()
+    race.wait_for_start()
+    text, input_area = race.get_data()
 
     return text, input_area

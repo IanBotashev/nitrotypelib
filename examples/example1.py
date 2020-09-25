@@ -5,7 +5,7 @@ from nitrotypelib.common.utils.race import start_race
 
 
 driver = webdriver.Firefox()
-login = Login(True, "username", 'password')
+login = Login(True, "username", "password")
 
 session = NitroType(driver, login)
 session.login()
@@ -13,3 +13,6 @@ session.login()
 race = session.race()
 
 text, input_area = start_race(race)
+
+for letter in text:
+    input_area.send_keys(letter)
