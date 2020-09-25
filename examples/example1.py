@@ -5,7 +5,7 @@ from nitrotypelib.common.utils.race import start_race
 
 
 driver = webdriver.Firefox()
-login = Login(True, "trulyfresh6", "minecraft")
+login = Login(True, "username", 'password')
 
 session = NitroType(driver, login)
 session.login()
