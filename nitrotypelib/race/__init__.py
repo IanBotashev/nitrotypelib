@@ -62,6 +62,19 @@ class Race:
 class NormalRace(Race):
     race_type = TR_NORMAL
 
+    def check_leader(self):
+        """
+        Check who is leader.
+        :param driver:
+        :return:
+        """
+        try:
+            leader = self.driver.find_element_by_class_name("racev3Map-poleLeader").text
+        except NoSuchElementException:
+            leader = True
+
+        return leader
+
 
 class QualifyingRace(Race):
     race_type = TR_QUALIFY
