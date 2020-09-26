@@ -8,20 +8,21 @@ def try_all_popups(driver):
     :param driver:
     :return:
     """
-    try:
-        achievement_popups(driver)
-    except:
-        pass
+    to_try = [achievement_popups, rank_up_popups, rank_up_popups2, mini_achievement_popups]
+    for func in to_try:
+        try:
+            func(driver)
+        except:
+            pass
 
-    try:
-        rank_up_popups(driver)
-    except:
-        pass
 
-    try:
-        mini_achievement_popups(driver)
-    except:
-        pass
+def rank_up_popups2(driver):
+    """
+    Removes the rank up pop ups. 2.
+    :param driver:
+    :return:
+    """
+    driver.find_element_by_xpath("/html/body/div[1]/div[1]/div[1]/div[3]/div/div[2]/button").click()
 
 
 def achievement_popups(driver):
