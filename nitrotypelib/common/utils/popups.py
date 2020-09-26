@@ -18,10 +18,24 @@ def try_all_popups(driver):
     except:
         pass
 
+    try:
+        mini_achievement_popups(driver)
+    except:
+        pass
+
 
 def achievement_popups(driver):
     """
     Removes achievement popups
+    :param driver:
+    :return:
+    """
+    driver.find_element_by_xpath("/html/body/div[1]/div[1]/div/div[1]/button").click()
+
+
+def mini_achievement_popups(driver):
+    """
+    Removes the little popups for achievement
     :param driver:
     :return:
     """
