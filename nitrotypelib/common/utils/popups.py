@@ -1,3 +1,6 @@
+import time
+
+
 # This specific part of the code deals with closing popups which can appear in-between games
 # such as Achievement popups.
 
@@ -14,6 +17,18 @@ def try_all_popups(driver):
             func(driver)
         except:
             pass
+
+
+def remove_all_popups(driver):
+    """
+    As it turns out, you can remove any and all popups by first going to the garage. That's literally it.
+    :param driver:
+    :return:
+    """
+    return_url = driver.current_url
+    driver.get("https://www.nitrotype.com/garage")
+    time.sleep(0.2)
+    driver.get(return_url)
 
 
 def try_default(driver):
