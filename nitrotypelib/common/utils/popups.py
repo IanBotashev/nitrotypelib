@@ -8,12 +8,21 @@ def try_all_popups(driver):
     :param driver:
     :return:
     """
-    to_try = [achievement_popups, rank_up_popups, rank_up_popups2, mini_achievement_popups]
+    to_try = [try_default, achievement_popups, rank_up_popups, rank_up_popups2, mini_achievement_popups]
     for func in to_try:
         try:
             func(driver)
         except:
             pass
+
+
+def try_default(driver):
+    """
+    Tries a css selector for a generic close button used by nitro type.
+    :param driver:
+    :return:
+    """
+    driver.find_element_by_css_selector(".growl-close").click()
 
 
 def rank_up_popups2(driver):
