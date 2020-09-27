@@ -1,5 +1,5 @@
 from .login import Login
-from .common.utils.login import login
+from nitrotypelib.login.login import login
 from .common.utils.race import wait_to_load, is_qualifying
 from .race import NormalRace, QualifyingRace
 

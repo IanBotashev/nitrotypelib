@@ -2,13 +2,14 @@ from selenium import webdriver
 from nitrotypelib import NitroType
 from nitrotypelib.login import Login
 from nitrotypelib.common.utils.race import start_race
+from nitrotypelib.login.login import create_account
 
 
 driver = webdriver.Firefox()
-login = Login(True, "username", "password")
+login = Login(False, "username", "password")
 
 session = NitroType(driver, login)
-session.login()
+create_account(driver, login)
 
 race = session.race()
 
