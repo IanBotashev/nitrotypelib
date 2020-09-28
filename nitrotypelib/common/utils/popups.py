@@ -19,7 +19,7 @@ def try_all_popups(driver):
             pass
 
 
-def remove_all_popups(driver):
+def remove_all_popups(driver, redirect=False):
     """
     As it turns out, you can remove any and all popups by first going to the garage. That's literally it.
     :param driver:
@@ -28,7 +28,8 @@ def remove_all_popups(driver):
     return_url = driver.current_url
     driver.get("https://www.nitrotype.com/garage")
     time.sleep(0.2)
-    driver.get(return_url)
+    if redirect:
+        driver.get(return_url)
 
 
 def try_default(driver):
