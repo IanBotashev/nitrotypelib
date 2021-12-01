@@ -1,2 +1,3 @@
 # nitrotypelib
-A simple project which allows for you to interract with Nitro Type, allowing for creating nitro type faster and better.
+A library made for interacting with the Nitro Type website.
+Source code last updated on Oct 9th, 2020.
